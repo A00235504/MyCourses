@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		2722838F2698930600622499 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2722838E2698930600622499 /* AppDelegate.swift */; };
 		272283912698930600622499 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272283902698930600622499 /* SceneDelegate.swift */; };
-		272283932698930600622499 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272283922698930600622499 /* ViewController.swift */; };
 		272283962698930600622499 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 272283942698930600622499 /* Main.storyboard */; };
 		272283982698930700622499 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 272283972698930700622499 /* Assets.xcassets */; };
 		2722839B2698930700622499 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 272283992698930700622499 /* LaunchScreen.storyboard */; };
 		272283A62698930700622499 /* MyCoursesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272283A52698930700622499 /* MyCoursesTests.swift */; };
 		272283B12698930700622499 /* MyCoursesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272283B02698930700622499 /* MyCoursesUITests.swift */; };
+		278DAB3826B1E68F00FA81B1 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278DAB3726B1E68F00FA81B1 /* LoginPageViewController.swift */; };
+		27F9063126AA15DA00E93388 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F9063026AA15DA00E93388 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +39,6 @@
 		2722838B2698930600622499 /* MyCourses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCourses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2722838E2698930600622499 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		272283902698930600622499 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		272283922698930600622499 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		272283952698930600622499 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		272283972698930700622499 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2722839A2698930700622499 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +49,8 @@
 		272283AC2698930700622499 /* MyCoursesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyCoursesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		272283B02698930700622499 /* MyCoursesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCoursesUITests.swift; sourceTree = "<group>"; };
 		272283B22698930700622499 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		278DAB3726B1E68F00FA81B1 /* LoginPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
+		27F9063026AA15DA00E93388 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +103,12 @@
 			children = (
 				2722838E2698930600622499 /* AppDelegate.swift */,
 				272283902698930600622499 /* SceneDelegate.swift */,
-				272283922698930600622499 /* ViewController.swift */,
 				272283942698930600622499 /* Main.storyboard */,
 				272283972698930700622499 /* Assets.xcassets */,
 				272283992698930700622499 /* LaunchScreen.storyboard */,
 				2722839C2698930700622499 /* Info.plist */,
+				27F9063026AA15DA00E93388 /* ViewController.swift */,
+				278DAB3726B1E68F00FA81B1 /* LoginPageViewController.swift */,
 			);
 			path = MyCourses;
 			sourceTree = "<group>";
@@ -258,8 +261,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				272283932698930600622499 /* ViewController.swift in Sources */,
 				2722838F2698930600622499 /* AppDelegate.swift in Sources */,
+				278DAB3826B1E68F00FA81B1 /* LoginPageViewController.swift in Sources */,
+				27F9063126AA15DA00E93388 /* ViewController.swift in Sources */,
 				272283912698930600622499 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
