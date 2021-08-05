@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		270C7CAD26BB852F00D990F8 /* CourseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270C7CAC26BB852F00D990F8 /* CourseListViewController.swift */; };
 		2722838F2698930600622499 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2722838E2698930600622499 /* AppDelegate.swift */; };
 		272283912698930600622499 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272283902698930600622499 /* SceneDelegate.swift */; };
 		272283962698930600622499 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 272283942698930600622499 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		270C7CAC26BB852F00D990F8 /* CourseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListViewController.swift; sourceTree = "<group>"; };
 		2722838B2698930600622499 /* MyCourses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCourses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2722838E2698930600622499 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		272283902698930600622499 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				2722839C2698930700622499 /* Info.plist */,
 				27F9063026AA15DA00E93388 /* ViewController.swift */,
 				278DAB3726B1E68F00FA81B1 /* LoginPageViewController.swift */,
+				270C7CAC26BB852F00D990F8 /* CourseListViewController.swift */,
 			);
 			path = MyCourses;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2722838F2698930600622499 /* AppDelegate.swift in Sources */,
+				270C7CAD26BB852F00D990F8 /* CourseListViewController.swift in Sources */,
 				278DAB3826B1E68F00FA81B1 /* LoginPageViewController.swift in Sources */,
 				27F9063126AA15DA00E93388 /* ViewController.swift in Sources */,
 				272283912698930600622499 /* SceneDelegate.swift in Sources */,
