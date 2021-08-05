@@ -13,7 +13,7 @@ class TodoTableViewController: UITableViewController {
     let userDefault = UserDefaults.standard
     let cellid = "cellid"
     
-    let courses = ["HR","Technology","Science","Management"]
+    var courses = ["HR","Technology","Science","Management"]
     @IBAction func reload(_ sender: Any) {
         tableView.reloadData()
     
@@ -26,9 +26,11 @@ class TodoTableViewController: UITableViewController {
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellid)
         
-        let rr = readIntData(key: "newkey")
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        print(rr)
+        courses = readIntData(key: "newkey")
+        
+        print(courses)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -58,5 +60,29 @@ class TodoTableViewController: UITableViewController {
         let rr = readIntData(key: "newkey")
         
         print(rr)
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete){
+            courses.remove(at: indexPath.item)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            writeAnyDataList(key: "newkey", value: courses)
+            
+            courses = readIntData(key: "newkey")
+            
+            tableView.reloadData()
+            
+        }
+    }
+    func writeAnyDataList(key: String , value: Array<String>){
+//        userDefault.set(value, forKey: key)
+        userDefault.set(value, forKey: key)
+        userDefault.synchronize()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        courses = readIntData(key: "newkey")
+        tableView.reloadData()
+        
     }
 }

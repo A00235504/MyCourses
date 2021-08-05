@@ -170,22 +170,68 @@
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="JXl-Kh-z4T">
                                 <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JXl-Kh-z4T" id="MPf-Z5-HGh">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="celltable" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JXl-Kh-z4T" id="MPf-Z5-HGh">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h62-ig-212">
+                                            <rect key="frame" x="37" y="11" width="29" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="svf-iZ-uBe" id="wDM-da-U6I"/>
-                            <outlet property="delegate" destination="svf-iZ-uBe" id="4Qb-n9-ECF"/>
+                            <outlet property="delegate" destination="svf-iZ-uBe" id="5EU-WY-sWA"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="NWk-qH-3aV"/>
+                    <connections>
+                        <segue destination="Igu-BZ-9V4" kind="show" identifier="myseg" id="52B-ZX-kfg"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e5f-gq-5g1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1423" y="-52"/>
+        </scene>
+        <!--SecondViewController-->
+        <scene sceneID="Srp-Vj-hi6">
+            <objects>
+                <viewController storyboardIdentifier="SecondViewController" title="SecondViewController" id="Igu-BZ-9V4" customClass="ViewDetailsViewController" customModule="MyCourses" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Hg-vl-9t3" customClass="ViewDetailsViewController" customModule="MyCourses" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h2S-ox-koF">
+                                <rect key="frame" x="31" y="132" width="42" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="Ndg-u7-1CI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jjQ-64-oYQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="h2S-ox-koF" firstAttribute="leading" secondItem="jjQ-64-oYQ" secondAttribute="leading" constant="31" id="Cvc-Qq-32K"/>
+                            <constraint firstItem="h2S-ox-koF" firstAttribute="top" secondItem="jjQ-64-oYQ" secondAttribute="top" constant="44" id="L63-9c-SCp"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="g0o-7K-nR6"/>
+                    <connections>
+                        <outlet property="mytext" destination="h2S-ox-koF" id="cxy-cp-UjB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1uN-O0-JFa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2228.985507246377" y="-44.196428571428569"/>
         </scene>
         <!--Register-->
         <scene sceneID="AZ7-EJ-GgJ">
@@ -260,6 +306,9 @@
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

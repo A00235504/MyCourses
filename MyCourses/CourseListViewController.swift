@@ -26,7 +26,7 @@ class CoursesListViewController: UITableViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellid)
-        
+        tableView.delegate = self
         let getdata = readIntDataList(key: "newkey")
         
         if(getdata.count == 0){
@@ -46,6 +46,8 @@ class CoursesListViewController: UITableViewController {
         
         let course = self.courses[indexPath.row]
         cell.textLabel?.text = course
+        
+        cell.accessoryType = .detailDisclosureButton
         return cell
     }
     
@@ -93,6 +95,30 @@ class CoursesListViewController: UITableViewController {
             //return userDefault.string(forKey: key)!
             return userDefault.stringArray(forKey: key) ?? [String]()
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        print("kk")
+        
+//        let vc = storyboard?.instantiateViewController(withIdentifier: "ViewDetailsViewController") as? ViewDetailsViewController
+//               //vc?.image = UIImage(named: courses[indexPath.row] )!
+//               vc?.name = courses[indexPath.row]
+//               navigationController?.pushViewController(vc!, animated: true)
+        
+        
+//        let destination = ViewDetailsViewController() // Your destination
+//        navigationController?.pushViewController(destination, animated: true)
+//
+//        let secondViewController = storyboard?.instantiateViewController(withIdentifier: "SecondViewController") as? ViewDetailsViewController
+//
+//        self.navigationController?.pushViewController(secondViewController!, animated: true)
+        
+        
+        let controller = ViewDetailsViewController()
+
+                
+        
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 
 }
