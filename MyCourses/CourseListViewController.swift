@@ -25,7 +25,7 @@ class CoursesListViewController: UITableViewController {
         
         navigationController?.navigationBar.prefersLargeTitles = true
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellid)
+//        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellid)
         tableView.delegate = self
         let getdata = readIntDataList(key: "newkey")
         
@@ -97,6 +97,8 @@ class CoursesListViewController: UITableViewController {
         }
     }
     
+    /*
+    
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         print("kk")
         
@@ -120,6 +122,7 @@ class CoursesListViewController: UITableViewController {
         
         self.navigationController?.pushViewController(controller, animated: true)
     }
+ */
 
 }
 

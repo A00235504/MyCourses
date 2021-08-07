@@ -10,7 +10,7 @@ import UIKit
 
 class ViewDetailsViewController: UIViewController {
     
-    @IBOutlet weak var lbl: UILabel!
+//    @IBOutlet weak var lbl: UILabel!
     
     
     var image = UIImage()

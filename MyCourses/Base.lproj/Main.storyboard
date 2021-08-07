@@ -167,7 +167,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="JXl-Kh-z4T">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellid" id="JXl-Kh-z4T" customClass="CelltableViewCell" customModule="MyCourses" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="celltable" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JXl-Kh-z4T" id="MPf-Z5-HGh">
@@ -181,7 +181,18 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ugh-5O-4zl">
+                                            <rect key="frame" x="363" y="10" width="20" height="22"/>
+                                            <state key="normal" image="info.circle" catalog="system"/>
+                                            <connections>
+                                                <segue destination="Igu-BZ-9V4" kind="show" identifier="showDetail" id="Rf3-b8-PxQ"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Ugh-5O-4zl" firstAttribute="top" secondItem="MPf-Z5-HGh" secondAttribute="top" constant="10" id="Dt8-Ga-Qcv"/>
+                                        <constraint firstAttribute="trailing" secondItem="Ugh-5O-4zl" secondAttribute="trailing" constant="31" id="kqQ-5h-fkC"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -191,9 +202,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="NWk-qH-3aV"/>
-                    <connections>
-                        <segue destination="Igu-BZ-9V4" kind="show" identifier="myseg" id="52B-ZX-kfg"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e5f-gq-5g1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -202,7 +210,7 @@
         <!--SecondViewController-->
         <scene sceneID="Srp-Vj-hi6">
             <objects>
-                <viewController storyboardIdentifier="SecondViewController" title="SecondViewController" id="Igu-BZ-9V4" customClass="ViewDetailsViewController" customModule="MyCourses" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondViewController" title="SecondViewController" id="Igu-BZ-9V4" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Hg-vl-9t3" customClass="ViewDetailsViewController" customModule="MyCourses" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -225,9 +233,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="g0o-7K-nR6"/>
-                    <connections>
-                        <outlet property="mytext" destination="h2S-ox-koF" id="cxy-cp-UjB"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1uN-O0-JFa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -304,6 +309,7 @@
         <segue reference="GkD-gF-98K"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
