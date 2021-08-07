@@ -47,7 +47,7 @@ class CoursesListViewController: UITableViewController {
         let course = self.courses[indexPath.row]
         cell.textLabel?.text = course
         
-        cell.accessoryType = .detailDisclosureButton
+        //cell.accessoryType = .detailDisclosureButton
         return cell
     }
     
