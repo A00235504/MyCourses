@@ -22,6 +22,7 @@ class TodoTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
+        navigationController?.setNavigationBarHidden(false, animated: false)
         navigationController?.navigationBar.prefersLargeTitles = true
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellid)
@@ -31,6 +32,11 @@ class TodoTableViewController: UITableViewController {
         courses = readIntData(key: "newkey")
         
         print(courses)
+        
+       
+        let logoutbutton = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up.fill") , style: .done, target: self, action: #selector(logoutUser))
+        
+        navigationItem.rightBarButtonItems = [logoutbutton, editButtonItem ]
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -83,6 +89,15 @@ class TodoTableViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         courses = readIntData(key: "newkey")
         tableView.reloadData()
+        
+    }
+    
+    @objc func logoutUser(){
+        userDefault.set("", forKey: "username")
+        let dest = storyboard?.instantiateViewController(identifier: "LoginPageViewController") as! LoginPageViewController
+        //navigationController?.popToRootViewController(animated: true)
+        navigationController?.pushViewController(dest, animated: true)
+        
         
     }
 }
