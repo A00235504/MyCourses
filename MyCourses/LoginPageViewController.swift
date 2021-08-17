@@ -10,7 +10,7 @@ import UIKit
 
 class LoginPageViewController: UIViewController {
     
-    
+    //initialization and connections
     let userDefault = UserDefaults.standard
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -18,7 +18,9 @@ class LoginPageViewController: UIViewController {
     override func viewDidLoad() {
         
         navigationController?.setNavigationBarHidden(true, animated: true)
+        //reading the user data from local
         let data = readData(key: "username")
+
         if (data.isEmpty){
             print("error")
         }
@@ -29,6 +31,7 @@ class LoginPageViewController: UIViewController {
         }
     }
     
+    //login button on click
     @IBAction func LoginGo(_ sender: Any) {
         print(username.text!)
         
@@ -49,11 +52,14 @@ class LoginPageViewController: UIViewController {
             self.present(alertController, animated: true, completion: nil)
         }
     }
+    
+    //write the data to local
     func writeAnyDataList(key: String , value: String){
         userDefault.set(value, forKey: key)
         userDefault.synchronize()
     }
-    
+
+    //read data from local
     func readData(key: String) -> String{
         if userDefault.object(forKey: key) == nil {
             let value = ""

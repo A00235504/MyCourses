@@ -12,21 +12,19 @@ import Foundation
 import UIKit
 
 class TodoTableViewController: UITableViewController {
-//    var todoList: TodoList!
+    
+    //initialization here
     let userDefault = UserDefaults.standard
     let cellid = "cellid"
     
     var courses = [String]()
-    @IBAction func reload(_ sender: Any) {
-        tableView.reloadData()
     
-    }
-        
     @IBOutlet weak var labelnocourse: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         
         if(courses.isEmpty){
             labelnocourse.alpha = 1.0
@@ -45,7 +43,7 @@ class TodoTableViewController: UITableViewController {
         
         print(courses)
         
-       
+        
         let logoutbutton = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up.fill") , style: .done, target: self, action: #selector(logoutUser))
         
         navigationItem.rightBarButtonItems = [logoutbutton, editButtonItem ]
@@ -63,10 +61,11 @@ class TodoTableViewController: UITableViewController {
         return cell
     }
     
+    //reading data from local in array list
     func readIntData(key: String) -> Array<String>{
         if userDefault.object(forKey: key) == nil {
             let newArray = [String]()
-
+            
             return newArray
         } else {
             //return userDefault.string(forKey: key)!
@@ -75,7 +74,7 @@ class TodoTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let rr = readIntData(key: "newkey")
+        _ = readIntData(key: "newkey")
         
     }
     
@@ -91,11 +90,14 @@ class TodoTableViewController: UITableViewController {
             
         }
     }
+    
+    //write data to local
     func writeAnyDataList(key: String , value: Array<String>){
         userDefault.set(value, forKey: key)
         userDefault.synchronize()
     }
     
+    //reading data from local and also checking if courses empty or not
     override func viewDidAppear(_ animated: Bool) {
         courses = readIntData(key: "newkey")
         tableView.reloadData()
@@ -107,6 +109,7 @@ class TodoTableViewController: UITableViewController {
         }
     }
     
+    //logout the user function
     @objc func logoutUser(){
         userDefault.set("", forKey: "username")
         let dest = storyboard?.instantiateViewController(identifier: "LoginPageViewController") as! LoginPageViewController

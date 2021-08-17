@@ -10,6 +10,7 @@ import UIKit
 
 class CoursesListViewController: UITableViewController {
     
+    //initialization 
     let cellid = "cellid"
     let userDefault = UserDefaults.standard
     var courses = [Courses]()
@@ -25,6 +26,7 @@ class CoursesListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //courses data defined here
         courses.append(Courses(name: "Business Analytics", desc: "Become a data storyteller and explore how to become a business analyst.In this Business Analytics program, you will complete a series of data analysis courses that will set you up to become a specialist in managing, interpreting, analyzing, and presenting data to support decision-making processes in all types and sizes of organizations. You’ll gain the skills to help organizations make more informed decisions, predict trends, and better understand the needs of their customers by working independently or with IT teams to mine data from primary and secondary sources, analyze and interpret results, pinpoint and predict trends, provide concise reports, and design, create, and maintain databases. You have the flexibility to study Business Analytics in-class or online so you can continue to work and earn while you learn.", code: "A001",professor: "Mr John"))
         
         courses.append(Courses(name: "Human Resources Management", desc: "Human resources professionals know all too well that a company is only as good as the people it employs. Earn your certificate in Human Resources, and you’ll have the skills and experience to become a Certified Human Resources Professional (CHRP) by exploring recruiting opportunities, challenges, and strategies; organizational management; labour relations, and more. The curriculum in Human Resources Management is designed to boost your existing qualifications and to support you if you intend to pursue your Certified Human Resources Professional (CHRP) designation. The nine core courses required to access the National Knowledge Exam (NKE) are approved by the Ontario Human Resources Professionals Association. Additional courses include mediation, practitioner seminars, and an eight-week placement in a professional human resources environment. Information on the Human Resources Professionals Association and the CHRP designation is available by visiting hrpa.ca .", code: "A002",professor: "Mr Jane"))
@@ -60,6 +62,7 @@ class CoursesListViewController: UITableViewController {
         return courses.count
     }
     
+    //table view method for setting the cell to course name
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellid, for: indexPath)
         
@@ -70,6 +73,7 @@ class CoursesListViewController: UITableViewController {
         return cell
     }
     
+    //table view function when on click call the write data
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("hello: \(courses[indexPath.item]) \(indexPath)")
         writeAnyData(key: "mykey", value: courses[indexPath.item].name)
@@ -82,17 +86,19 @@ class CoursesListViewController: UITableViewController {
         
     }
     
+    //write data list function
     func writeAnyDataList(key: String , value: Array<String>){
         userDefault.set(value, forKey: key)
         userDefault.synchronize()
     }
     
-    
+    //write data function
     func writeAnyData(key: String, value: Any){
         userDefault.set(value, forKey: key)
         userDefault.synchronize()
     }
     
+    //read single data
     func readIntData(key: String) -> String{
         if userDefault.object(forKey: key) == nil {
             return "error"
@@ -101,6 +107,7 @@ class CoursesListViewController: UITableViewController {
         }
     }
     
+    //read data list from local function
     func readIntDataList(key: String) -> Array<String>{
         if userDefault.object(forKey: key) == nil {
             let newArray = [String]()
@@ -113,7 +120,7 @@ class CoursesListViewController: UITableViewController {
     }
     
     
-    
+    //pushing data to next controller
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         let dest = storyboard?.instantiateViewController(identifier: "DetailView") as! ViewDetailsViewController
         

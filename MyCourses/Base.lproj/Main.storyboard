@@ -202,16 +202,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dee-EB-LCQ">
-                                <rect key="frame" x="10" y="84" width="42" height="21"/>
+                                <rect key="frame" x="10" y="64" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="61" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozA-UH-9jX">
-                                <rect key="frame" x="10" y="135" width="394" height="727"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="Jlb-Og-9UX"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="61" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozA-UH-9jX">
+                                <rect key="frame" x="10" y="166" width="394" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I61-eU-42t" userLabel="Coursecodeprofessor">
+                                <rect key="frame" x="10" y="115" width="394" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -220,16 +223,20 @@
                         <viewLayoutGuide key="safeArea" id="jMa-lc-5mh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ozA-UH-9jX" firstAttribute="leading" secondItem="jMa-lc-5mh" secondAttribute="leading" constant="10" id="KRl-R3-KRf"/>
-                            <constraint firstItem="ozA-UH-9jX" firstAttribute="top" secondItem="dee-EB-LCQ" secondAttribute="bottom" constant="30" id="SsP-dD-VFk"/>
-                            <constraint firstItem="jMa-lc-5mh" firstAttribute="trailing" secondItem="ozA-UH-9jX" secondAttribute="trailing" constant="10" id="dgZ-4t-5xB"/>
+                            <constraint firstItem="I61-eU-42t" firstAttribute="top" secondItem="dee-EB-LCQ" secondAttribute="bottom" constant="30" id="CKD-Y0-xNh"/>
+                            <constraint firstItem="I61-eU-42t" firstAttribute="leading" secondItem="jMa-lc-5mh" secondAttribute="leading" constant="10" id="d8u-p1-MdK"/>
                             <constraint firstItem="dee-EB-LCQ" firstAttribute="leading" secondItem="jMa-lc-5mh" secondAttribute="leading" constant="10" id="ehI-hb-53s"/>
-                            <constraint firstItem="dee-EB-LCQ" firstAttribute="top" secondItem="jMa-lc-5mh" secondAttribute="top" constant="40" id="yHY-tu-wYQ"/>
+                            <constraint firstItem="jMa-lc-5mh" firstAttribute="trailing" secondItem="I61-eU-42t" secondAttribute="trailing" constant="10" id="jei-8m-Mz2"/>
+                            <constraint firstItem="jMa-lc-5mh" firstAttribute="trailing" secondItem="ozA-UH-9jX" secondAttribute="trailing" constant="10" id="x1L-aA-mfa"/>
+                            <constraint firstItem="dee-EB-LCQ" firstAttribute="top" secondItem="jMa-lc-5mh" secondAttribute="top" constant="20" id="yHY-tu-wYQ"/>
+                            <constraint firstItem="ozA-UH-9jX" firstAttribute="leading" secondItem="jMa-lc-5mh" secondAttribute="leading" constant="10" id="ylF-gp-9Dw"/>
+                            <constraint firstItem="ozA-UH-9jX" firstAttribute="top" secondItem="I61-eU-42t" secondAttribute="bottom" constant="30" id="zS0-ra-EAc"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="coursedescription" destination="dee-EB-LCQ" id="DyT-zr-AT3"/>
                         <outlet property="coursedescriptionfulltext" destination="ozA-UH-9jX" id="yNB-np-DXv"/>
+                        <outlet property="courseprofessorcode" destination="I61-eU-42t" id="a8E-ZP-i5C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aOv-Ea-Tq5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
