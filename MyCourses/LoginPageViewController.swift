@@ -10,13 +10,13 @@ import UIKit
 
 class LoginPageViewController: UIViewController {
     
-   
+    
     let userDefault = UserDefaults.standard
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
     
     override func viewDidLoad() {
-           
+        
         navigationController?.setNavigationBarHidden(true, animated: true)
         let data = readData(key: "username")
         if (data.isEmpty){
@@ -44,7 +44,7 @@ class LoginPageViewController: UIViewController {
             let defaultAction = UIAlertAction(title: NSLocalizedString("Ok", comment: ""), style: .default, handler: { (pAlert) in
                 self.username.text = ""
                 self.password.text = ""
-                    })
+            })
             alertController.addAction(defaultAction)
             self.present(alertController, animated: true, completion: nil)
         }
