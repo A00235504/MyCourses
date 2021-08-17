@@ -5,6 +5,9 @@
 //  Created by aakash sadnani on 22/07/21.
 //
 
+
+// view controller for home page
+
 import Foundation
 import UIKit
 
@@ -13,15 +16,24 @@ class TodoTableViewController: UITableViewController {
     let userDefault = UserDefaults.standard
     let cellid = "cellid"
     
-    var courses = ["HR","Technology","Science","Management"]
+    var courses = [String]()
     @IBAction func reload(_ sender: Any) {
         tableView.reloadData()
     
     }
         
+    @IBOutlet weak var labelnocourse: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        
+        
+        if(courses.isEmpty){
+            labelnocourse.alpha = 1.0
+        }
+        else{
+            labelnocourse.alpha = 0.0
+        }
         navigationController?.setNavigationBarHidden(false, animated: false)
         navigationController?.navigationBar.prefersLargeTitles = true
         
@@ -65,7 +77,6 @@ class TodoTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         let rr = readIntData(key: "newkey")
         
-        print(rr)
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -81,7 +92,6 @@ class TodoTableViewController: UITableViewController {
         }
     }
     func writeAnyDataList(key: String , value: Array<String>){
-//        userDefault.set(value, forKey: key)
         userDefault.set(value, forKey: key)
         userDefault.synchronize()
     }
@@ -89,15 +99,18 @@ class TodoTableViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         courses = readIntData(key: "newkey")
         tableView.reloadData()
-        
+        if(courses.isEmpty){
+            labelnocourse.alpha = 1.0
+        }
+        else{
+            labelnocourse.alpha = 0.0
+        }
     }
     
     @objc func logoutUser(){
         userDefault.set("", forKey: "username")
         let dest = storyboard?.instantiateViewController(identifier: "LoginPageViewController") as! LoginPageViewController
-        //navigationController?.popToRootViewController(animated: true)
         navigationController?.pushViewController(dest, animated: true)
-        
         
     }
 }
