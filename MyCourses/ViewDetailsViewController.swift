@@ -26,20 +26,28 @@ class ViewDetailsViewController: UIViewController {
         
         print("second page")
        
-        
+       
         coursedescription.text = titles.description
         
         coursedescriptionfulltext.text = course.description
         
-        
+        UIView.animate(withDuration: 2, delay: 0, options: [.curveEaseIn]){
+            () -> Void in
+            if self.coursedescriptionfulltext.alpha == 1{
+                           self.coursedescriptionfulltext.alpha = 1
+                
+            }
+                       else{
+                        self.coursedescriptionfulltext.alpha = 0
+                           
+                       }
+            //-self.view.frame.width
+            self.view.layoutIfNeeded()
+        }
         
     }
     
+
     
-//    override func viewDidLoad() {
-//          super.viewDidLoad()
-//          //lbl.text = "You selected \(name) for vote"
-//          //img.image = image
-//    } 
 }
 

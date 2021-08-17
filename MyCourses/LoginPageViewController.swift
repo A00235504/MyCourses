@@ -18,7 +18,6 @@ class LoginPageViewController: UIViewController {
     override func viewDidLoad() {
            
         navigationController?.setNavigationBarHidden(true, animated: true)
-       //print(username!)
         let data = readData(key: "username")
         if (data.isEmpty){
             print("error")

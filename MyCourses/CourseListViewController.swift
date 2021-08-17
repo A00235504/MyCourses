@@ -64,7 +64,6 @@ class CoursesListViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellid, for: indexPath)
         
         let course = self.courses[indexPath.row]
-//        let course = self.courses[indexPath.row]
         cell.textLabel?.text = course.name
         
         cell.accessoryType = .detailDisclosureButton
@@ -74,9 +73,7 @@ class CoursesListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("hello: \(courses[indexPath.item]) \(indexPath)")
         writeAnyData(key: "mykey", value: courses[indexPath.item].name)
-        let tt = readIntData(key: "mykey")
-        print(tt)
-        
+    
         if(!newlist.contains(courses[indexPath.item].name)){
             newlist.append(courses[indexPath.item].name)
             writeAnyDataList(key: "newkey", value: newlist)
@@ -87,7 +84,6 @@ class CoursesListViewController: UITableViewController {
     }
 
     func writeAnyDataList(key: String , value: Array<String>){
-//        userDefault.set(value, forKey: key)
         userDefault.set(value, forKey: key)
         userDefault.synchronize()
     }
